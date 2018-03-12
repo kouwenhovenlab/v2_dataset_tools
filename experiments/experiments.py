@@ -9,7 +9,7 @@ from qcodes.dataset.experiment_container import load_experiment_by_name, \
 from qcodes.dataset.data_set import DataSet
 from qcodes.sweep import SweepMeasurement
 
-from experiments.realtime_monitors import Plot1DSubscriber
+from .realtime_monitors import Plot1DSubscriber
 
 
 def do_experiment(base_path, setup, sweep_object, cleanup, live_plot_axes=None,
@@ -74,6 +74,7 @@ def do_experiment(base_path, setup, sweep_object, cleanup, live_plot_axes=None,
 
     # meas
     measurement.register_sweep(sweep_object)
+    measurement.write_period = 1.0
 
     # end
     for func, args in cleanup:

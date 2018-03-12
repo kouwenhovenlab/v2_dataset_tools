@@ -4,6 +4,7 @@ channels:
  - conda-forge
 dependencies:
  - matplotlib
+ - jupyter
  - pip:
      - "--editable=git+https://github.com/sohailc/Qcodes.git@e7510cf9e38cc320b494cb25d60b2398e97ce24f#egg=qcodes-sweep"
      - zmq
